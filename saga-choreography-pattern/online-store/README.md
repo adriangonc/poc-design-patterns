@@ -9,7 +9,13 @@ O design pattern Saga divide uma transação em uma série de etapas, onde cada 
 
 O padrão Saga é uma alternativa ao padrão de commit de duas fases, que é mais centralizado e pode causar problemas de escalabilidade e disponibilidade em sistemas distribuídos. Com o padrão Saga, cada serviço é responsável por sua própria transação e compensação, o que torna o sistema mais resiliente e escalável.
 
+#### Observações
+O Intuito desse padrão não é desfazer todas as transações caso ocorra qualquer erro.
+O ideal e desfazer as alterações caso seja um erro do qual os sistemas não consigam ser recuperar.
+
+
 ![img.png](img/img.png)
+
 
 ### Legenda
 
@@ -24,3 +30,7 @@ Técnica usada para desfazer uma transação que já foi confirmada.
 - Kafka
 - Modules
 - Maven
+
+#### Descrição do projeto
+Este projeto simula um ecommerce onde uma transação passa por vários serviços.
+Para simplificar esses serviços são representados por módulos nessa aplicação
