@@ -9,6 +9,8 @@ O design pattern Saga divide uma transação em uma série de etapas, onde cada 
 
 O padrão Saga é uma alternativa ao padrão de commit de duas fases, que é mais centralizado e pode causar problemas de escalabilidade e disponibilidade em sistemas distribuídos. Com o padrão Saga, cada serviço é responsável por sua própria transação e compensação, o que torna o sistema mais resiliente e escalável.
 
+![img.png](img/img.png)
+
 ### Legenda
 
 * Compensador
