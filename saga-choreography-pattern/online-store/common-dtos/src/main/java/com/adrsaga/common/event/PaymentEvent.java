@@ -1,10 +1,12 @@
 package com.adrsaga.common.event;
 
 import com.adrsaga.common.dto.PaymentRequestDto;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.UUID;
 
+@NoArgsConstructor
 public class PaymentEvent implements Event {
 
     private UUID eventId= UUID.randomUUID();
@@ -22,5 +24,10 @@ public class PaymentEvent implements Event {
     @Override
     public Date getDate() {
         return eventDate;
+    }
+
+    public PaymentEvent(PaymentRequestDto paymentRequestDto, PaymentStatus paymentStatus) {
+        this.paymentRequestDto = paymentRequestDto;
+        this.paymentStatus = paymentStatus;
     }
 }

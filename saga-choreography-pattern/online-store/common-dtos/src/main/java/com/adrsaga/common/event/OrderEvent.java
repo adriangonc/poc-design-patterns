@@ -1,10 +1,12 @@
 package com.adrsaga.common.event;
 
 import com.adrsaga.common.dto.OrderRequestDto;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.UUID;
 
+@NoArgsConstructor
 public class OrderEvent implements Event {
     private UUID eventId= UUID.randomUUID();
     private Date eventDate = new Date();
@@ -20,5 +22,10 @@ public class OrderEvent implements Event {
     @Override
     public Date getDate() {
         return eventDate;
+    }
+
+    public OrderEvent(OrderRequestDto orderRequestDto, OrderStatus orderStatus) {
+        this.orderRequestDto = orderRequestDto;
+        this.orderStatus = orderStatus;
     }
 }
